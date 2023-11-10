@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="pokemonViewModel"
+            type="com.example.pokemongeo.PokemonViewModel" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00BCD4">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="300dp"
+                android:layout_height="175dp"
+                android:src="@{pokemonViewModel.getImage(context,pokemonViewModel.front)}"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/textDexNo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="@{pokemonViewModel.number}"
+                app:layout_constraintStart_toStartOf="@id/image"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                />
+
+            <TextView
+                android:id="@+id/pokemonName"
+                android:text="@{pokemonViewModel.name}"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                app:layout_constraintStart_toEndOf="@id/textDexNo"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                />
+            <ImageView
+                android:id="@+id/capture"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@{pokemonViewModel.getImage(context,pokemonViewModel.imageCapture)}"
+                android:scaleType="centerInside"
+                app:layout_constraintStart_toEndOf="@id/pokemonName"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{pokemonViewModel.getImage(context, pokemonViewModel.imageType1)}"
+                app:layout_constraintStart_toStartOf="@id/textDexNo"
+                app:layout_constraintTop_toBottomOf="@id/pokemonName"
+                />
+            <TextView
+                android:id="@+id/textType1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="@{pokemonViewModel.type1}"
+                app:layout_constraintStart_toStartOf="@id/imageView3"
+                app:layout_constraintTop_toBottomOf="@id/imageView3" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{pokemonViewModel.getImage(context, pokemonViewModel.imageType2)}"
+                app:layout_constraintStart_toEndOf="@id/imageView3"
+                app:layout_constraintTop_toBottomOf="@id/pokemonName" />
+
+            <TextView
+                android:id="@+id/textType2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="@{pokemonViewModel.type2}"
+                app:layout_constraintStart_toStartOf="@id/imageView2"
+                app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+            <TextView
+                android:id="@+id/textHeight"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:text="@{pokemonViewModel.height}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textType1" />
+
+            <TextView
+                android:id="@+id/textWeight"
+                android:layout_width="73dp"
+                android:layout_height="21dp"
+                android:text="@{pokemonViewModel.weight}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textHeight"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

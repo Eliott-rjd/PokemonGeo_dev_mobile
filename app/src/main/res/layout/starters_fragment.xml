@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="pokemonViewModel"
+            type="com.example.pokemongeo.PokemonViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00BCD4">
+
+        <TextView
+            android:id="@+id/textChoice"
+            android:layout_width="315dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="188dp"
+            android:text="Choose your new compagnion !"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/starter1"
+            android:layout_width="92dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="52dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/textChoice"
+            app:srcCompat="@drawable/p1" />
+
+        <ImageButton
+            android:id="@+id/starter2"
+            android:layout_width="92dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="52dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/textChoice"
+            app:srcCompat="@drawable/p4" />
+
+        <ImageButton
+            android:id="@+id/starter3"
+            android:layout_width="92dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="252dp"
+            android:layout_marginTop="52dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/textChoice"
+            app:srcCompat="@drawable/p7" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

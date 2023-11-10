@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="opponentPokemonViewModel"
+            type="com.example.pokemongeo.PokemonViewModel" />
+
+        <variable
+            name="playerPokemonViewModel"
+            type="com.example.pokemongeo.PokemonViewModel" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00BCD4">
+
+            <ImageView
+                android:id="@+id/imgOpponent"
+                android:layout_width="246dp"
+                android:layout_height="139dp"
+                android:layout_marginTop="16dp"
+                android:src="@{opponentPokemonViewModel.getImage(context,opponentPokemonViewModel.front)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.903"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nameOpponent"
+                android:layout_width="240dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{opponentPokemonViewModel.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgOpponent" />
+
+
+            <ImageView
+                android:id="@+id/imgPlayerPokemon"
+                android:layout_width="243dp"
+                android:layout_height="171dp"
+                android:layout_marginTop="208dp"
+                android:src="@{playerPokemonViewModel.getImage(context,playerPokemonViewModel.front)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.142"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/namePlayerPokemon"
+                android:layout_width="240dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@{playerPokemonViewModel.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgPlayerPokemon" />
+
+            <Button
+                android:id="@+id/fightButton"
+                android:layout_width="135dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="28dp"
+                android:text="Fight !"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/namePlayerPokemon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
